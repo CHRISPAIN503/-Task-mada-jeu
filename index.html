@@ -6,287 +6,203 @@
 <meta name="theme-color" content="#087f5b">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-
 <link rel="manifest" href="manifest.json">
-
 <title>Task Mada 🇲🇬</title>
 
 <style>
-*{
- box-sizing:border-box;
- -webkit-tap-highlight-color:transparent;
-}
-
+*{box-sizing:border-box}
 body{
  margin:0;
  font-family:Arial,sans-serif;
- background:#f4f7fb;
- color:#172033;
+ background:#eef2f7;
+ color:#172033
 }
-
 header{
- background:linear-gradient(135deg,#087f5b,#099268);
+ background:linear-gradient(135deg,#087f5b,#075c43);
  color:white;
  text-align:center;
- padding:25px 15px;
- box-shadow:0 4px 15px #0002;
+ padding:20px 12px;
+ box-shadow:0 4px 15px #0002
 }
-
-header h1{
- margin:0;
- font-size:28px;
-}
-
-header p{
- margin:7px 0 0;
- opacity:.9;
-}
-
-.container{
- max-width:700px;
- margin:auto;
- padding:15px;
-}
-
+header h1{margin:0;font-size:27px}
+header p{margin:6px 0 0;font-size:13px}
+.container{max-width:650px;margin:auto;padding:15px}
 .card{
  background:white;
- padding:19px;
+ border-radius:18px;
+ padding:18px;
  margin-bottom:15px;
- border-radius:20px;
- box-shadow:0 5px 20px #0000000d;
- border:1px solid #edf0f4;
+ box-shadow:0 5px 18px #00000012
 }
-
-.hidden{
- display:none!important;
-}
-
-input,
-textarea,
-button{
+.hidden{display:none!important}
+.center{text-align:center}
+.logo{font-size:45px}
+h2{margin:8px 0 15px}
+h3{margin:5px 0 8px}
+input,select,textarea,button{
  width:100%;
- padding:14px;
- margin-top:10px;
+ padding:13px;
+ margin-top:9px;
  border-radius:12px;
- border:1px solid #d9dee7;
- font-size:15px;
- font-family:inherit;
+ border:1px solid #d6dce5;
+ font-size:15px
 }
-
-input:focus,
-textarea:focus{
- outline:none;
- border-color:#087f5b;
- box-shadow:0 0 0 3px #087f5b18;
-}
-
-textarea{
- min-height:110px;
- resize:vertical;
-}
-
+textarea{min-height:90px}
 button{
  background:#087f5b;
  color:white;
  border:0;
+ font-weight:bold
+}
+button:active{transform:scale(.98)}
+.dark{background:#172033}
+.red{background:#d62828}
+.yellow{background:#e09f00}
+.auth{
+ text-align:center;
+ color:#087f5b;
  font-weight:bold;
- cursor:pointer;
- transition:.2s;
+ margin-top:15px
 }
-
-button:active{
- transform:scale(.98);
+.user-card{
+ background:linear-gradient(135deg,#087f5b,#075c43);
+ color:white;
+ border-radius:20px;
+ padding:20px;
+ margin-bottom:15px
 }
-
-button:disabled{
- opacity:.6;
+.user-top{
+ display:flex;
+ align-items:center;
+ gap:12px
 }
-
-.blue{background:#1971c2}
-.red{background:#c92a2a}
-.gray{background:#495057}
-.orange{background:#e8590c}
-
+.avatar{
+ width:50px;
+ height:50px;
+ border-radius:50%;
+ background:white;
+ color:#087f5b;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:22px;
+ font-weight:bold
+}
+.user-name{flex:1}
+.user-name small{display:block;opacity:.8;margin-top:3px}
+.money{
+ font-size:29px;
+ font-weight:bold;
+ margin-top:18px
+}
+.stats{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+ margin-top:14px
+}
+.stat{
+ background:#ffffff22;
+ padding:12px;
+ border-radius:13px
+}
+.stat span{font-size:12px;display:block;opacity:.8}
+.stat strong{font-size:18px}
+.install{
+ background:#fff8dc;
+ border:1px solid #efd06a;
+ padding:14px;
+ border-radius:15px;
+ margin-bottom:15px
+}
+.install button{background:#e09f00}
 .nav{
  display:grid;
  grid-template-columns:repeat(3,1fr);
- gap:8px;
+ gap:7px;
+ padding:10px
 }
-
 .nav button{
- font-size:12px;
- padding:13px 7px;
  margin:0;
- min-height:48px;
+ background:#eef2f7;
+ color:#172033;
+ font-size:12px
 }
-
-.balance{
- text-align:center;
- font-size:32px;
- font-weight:bold;
- color:#087f5b;
- margin:10px 0;
+.nav button.active{
+ background:#087f5b;
+ color:white
 }
-
-#dashboard .card{
- background:linear-gradient(135deg,#ffffff,#f8fffc);
+.section-title{
+ display:flex;
+ justify-content:space-between;
+ align-items:center
 }
-
-#dashboard p{
- background:#f7f9fb;
- padding:13px;
- border-radius:12px;
- margin:9px 0;
-}
-
-#dashPoints{
- color:#087f5b;
-}
-
 .mission{
- background:#fff;
- border:1px solid #e6eaf0;
- padding:16px;
- margin-top:12px;
- border-radius:16px;
- box-shadow:0 3px 12px #00000008;
+ border:1px solid #e1e6ed;
+ border-radius:15px;
+ padding:15px;
+ margin-bottom:12px
 }
-
-.mission h3{
- margin-top:0;
+.mission-head{
+ display:flex;
+ justify-content:space-between;
+ gap:10px
 }
-
-.mission p{
- line-height:1.5;
+.reward{
+ color:#087f5b;
+ font-weight:bold;
+ white-space:nowrap
 }
-
 .badge{
  display:inline-block;
- padding:6px 11px;
- border-radius:30px;
- font-size:12px;
+ padding:5px 9px;
+ border-radius:20px;
+ font-size:11px;
  font-weight:bold;
-}
-
-.pending{
- background:#d0ebff;
- color:#1864ab;
-}
-
-.approved{
- background:#d3f9d8;
- color:#087f5b;
-}
-
-.rejected{
- background:#ffe3e3;
- color:#c92a2a;
-}
-
-.paid{
- background:#d3f9d8;
- color:#087f5b;
-}
-
-.small{
- font-size:12px;
- color:#6c757d;
-}
-
-.adminHead{
- background:linear-gradient(135deg,#343a40,#212529);
- color:white;
- padding:18px;
- border-radius:15px;
-}
-
-.adminHead h2{
- margin-top:0;
-}
-
-#wallet .balance{
  background:#e8f7f1;
- padding:20px;
- border-radius:16px;
+ color:#087f5b;
+ margin-top:8px
 }
-
-#wallet hr{
- border:0;
- border-top:1px solid #e9ecef;
- margin:20px 0;
+.pending{background:#fff4d6;color:#9a6a00}
+.rejected{background:#ffe3e3;color:#b42318}
+.paid{background:#e5f7e8;color:#16732e}
+.item{
+ padding:13px 0;
+ border-bottom:1px solid #edf0f4
 }
-
-#loginPage,
-#registerPage{
- margin-top:20px;
-}
-
-#loginPage h2,
-#registerPage h2{
+.empty{
  text-align:center;
+ color:#788294;
+ padding:25px 10px
 }
-
-#missionPage{
- padding-top:15px;
-}
-
-#mReward{
- color:#087f5b;
-}
-
-.installBox{
+.alert{
+ padding:12px;
+ border-radius:12px;
  background:#e8f7f1;
- border:1px solid #b2dfd0;
- padding:15px;
+ color:#075c43;
+ margin-bottom:12px
+}
+.admin-access{
+ background:linear-gradient(135deg,#172033,#29364c);
+ color:white;
+ border-radius:16px;
+ padding:16px;
+ margin-bottom:15px
+}
+.admin-access button{
+ background:#087f5b
+}
+.admin-card{
+ border:1px solid #e1e6ed;
  border-radius:15px;
- margin-bottom:15px;
+ padding:14px;
+ margin-bottom:12px
 }
-
-.installBox b{
- color:#087f5b;
-}
-
-#installButton{
- display:none;
-}
-
-@media(max-width:500px){
-
- header{
-  padding:20px 12px;
- }
-
- header h1{
-  font-size:24px;
- }
-
- .container{
-  padding:10px;
- }
-
- .card{
-  padding:15px;
-  border-radius:17px;
- }
-
- .balance{
-  font-size:28px;
- }
-
- .nav{
-  gap:6px;
-  padding:10px;
- }
-
- .nav button{
-  font-size:11px;
-  padding:11px 5px;
- }
-
- .mission{
-  padding:14px;
- }
+.footer{
+ text-align:center;
+ color:#8993a3;
+ font-size:12px;
+ padding:20px
 }
 </style>
 </head>
@@ -300,137 +216,180 @@ button:disabled{
 
 <div class="container">
 
+<!-- LOGIN -->
 <div id="loginPage" class="card">
 
-<h2>🔐 Connexion</h2>
+<div class="center">
+<div class="logo">🇲🇬</div>
+<h2>Connexion</h2>
+<p>Bienvenue sur Task Mada</p>
+</div>
 
-<input id="loginEmail" type="email" placeholder="Adresse e-mail">
-<input id="loginPass" type="password" placeholder="Mot de passe">
+<input id="loginEmail" type="email" placeholder="Email">
+<input id="loginPassword" type="password" placeholder="Mot de passe">
 
-<button onclick="login()">Se connecter</button>
+<button onclick="login()">🔐 Se connecter</button>
 
-<button class="blue" onclick="showRegister()">
+<div class="auth" onclick="showRegister()">
 Créer un compte
-</button>
-
-<p id="loginMsg"></p>
+</div>
 
 </div>
 
-
+<!-- REGISTER -->
 <div id="registerPage" class="card hidden">
 
-<h2>👤 Créer un compte</h2>
+<div class="center">
+<div class="logo">📝</div>
+<h2>Créer un compte</h2>
+</div>
 
-<input id="regName" placeholder="Nom">
-<input id="regEmail" type="email" placeholder="Adresse e-mail">
-<input id="regPass" type="password" placeholder="Mot de passe">
+<input id="registerName" placeholder="Nom">
+<input id="registerEmail" type="email" placeholder="Email">
+<input id="registerPassword" type="password" placeholder="Mot de passe">
 
-<button onclick="register()">Créer le compte</button>
+<button onclick="register()">Créer mon compte</button>
 
-<button class="gray" onclick="showLogin()">
-Retour
-</button>
-
-<p id="registerMsg"></p>
+<div class="auth" onclick="showLogin()">
+J'ai déjà un compte
+</div>
 
 </div>
 
-
+<!-- APP -->
 <div id="appPage" class="hidden">
 
-<div class="card">
+<div class="user-card">
 
-<p>👋 Bonjour</p>
+<div class="user-top">
 
-<h2 id="userName">Utilisateur</h2>
+<div class="avatar" id="avatar">U</div>
 
-<div class="balance">
+<div class="user-name">
+<strong id="userName">Utilisateur</strong>
+<small id="userEmail">email</small>
+</div>
+
+</div>
+
+<div class="money">
 <span id="money">0</span> Ar
 </div>
 
-<p style="text-align:center">
-⭐ <b id="points">0</b> points
-</p>
+<div class="stats">
 
+<div class="stat">
+<span>💰 Solde</span>
+<strong id="points">0</strong>
 </div>
 
+<div class="stat">
+<span>🎯 Missions</span>
+<strong id="missionCount">0</strong>
+</div>
 
-<div class="installBox">
+</div>
+</div>
 
-<b>📱 Installer Task Mada</b>
+<!-- ADMIN BUTTON -->
+<div id="adminAccess" class="admin-access hidden">
 
-<p class="small">
-Ajoute Task Mada à ton téléphone pour l'utiliser comme une application.
+<strong>👨‍💼 Espace Administrateur</strong>
+
+<p style="font-size:13px;opacity:.85">
+Connecté avec le compte administrateur.
 </p>
 
-<button id="installButton" class="blue">
-📲 Installer Task Mada
+<button onclick="openAdmin()">
+⚙️ Ouvrir le panneau Admin
 </button>
 
 </div>
 
+<div id="installBox" class="install hidden">
 
-<div class="nav card">
+<strong>📱 Installer Task Mada</strong>
 
-<button onclick="showSection('dashboard')">
+<p style="font-size:13px">
+Ajoute Task Mada à ton téléphone.
+</p>
+
+<button onclick="installApp()">
+Installer l'application
+</button>
+
+</div>
+
+<!-- NAV -->
+<div class="card nav">
+
+<button class="active" onclick="showSection('dashboard',this)">
 🏠 Accueil
 </button>
 
-<button onclick="showSection('missions')">
+<button onclick="showSection('missions',this)">
 🎯 Missions
 </button>
 
-<button onclick="showSection('history')">
+<button onclick="showSection('history',this)">
 📜 Historique
 </button>
 
-<button onclick="showSection('wallet')">
-💰 Wallet
+<button onclick="showSection('wallet',this)">
+💳 Wallet
 </button>
 
-<button onclick="showSection('notifications')">
+<button onclick="showSection('notifications',this)">
 🔔 Alertes
 </button>
 
-<button class="red" onclick="logout()">
+<button onclick="logout()">
 🚪 Quitter
 </button>
 
 </div>
 
-
+<!-- DASHBOARD -->
 <div id="dashboard" class="section">
 
 <div class="card">
 
-<h2>📊 Dashboard</h2>
+<h2>🏠 Accueil</h2>
 
-<p>🎯 Missions : <b id="dashTotal">0</b></p>
-<p>✅ Validées : <b id="dashApproved">0</b></p>
-<p>🕐 En attente : <b id="dashPending">0</b></p>
-<p>⭐ Points : <b id="dashPoints">0</b></p>
+<div class="alert">
+👋 Bienvenue sur <strong>Task Mada</strong> !
+<br><br>
+Réalise des missions, envoie tes preuves et gagne des récompenses.
+</div>
+
+<button onclick="showSection('missions',null)">
+🎯 Voir les missions
+</button>
+
+<button class="dark" onclick="showSection('wallet',null)">
+💳 Ouvrir mon Wallet
+</button>
 
 </div>
 
 </div>
 
-
+<!-- MISSIONS -->
 <div id="missions" class="section hidden">
 
 <div class="card">
 
-<h2>🎯 Missions disponibles</h2>
+<h2>🎯 Missions</h2>
 
-<div id="missionsList">
-Chargement...
+<div id="missionList">
+<div class="empty">Chargement...</div>
 </div>
 
 </div>
 
 </div>
 
-
+<!-- HISTORY -->
 <div id="history" class="section hidden">
 
 <div class="card">
@@ -438,14 +397,14 @@ Chargement...
 <h2>📜 Historique</h2>
 
 <div id="historyList">
-Chargement...
+<div class="empty">Chargement...</div>
 </div>
 
 </div>
 
 </div>
 
-
+<!-- NOTIFICATIONS -->
 <div id="notifications" class="section hidden">
 
 <div class="card">
@@ -453,1608 +412,1405 @@ Chargement...
 <h2>🔔 Notifications</h2>
 
 <div id="notificationList">
-Aucune notification.
+<div class="empty">Aucune notification.</div>
 </div>
 
 </div>
 
 </div>
 
-
+<!-- WALLET -->
 <div id="wallet" class="section hidden">
 
 <div class="card">
 
-<h2>💰 Wallet</h2>
+<h2>💳 Wallet</h2>
 
-<div class="balance">
-<span id="walletMoney">0</span> Ar
+<div class="alert">
+Solde disponible :
+<strong><span id="walletMoney">0</span> Ar</strong>
 </div>
 
-<p style="text-align:center">
-<strong>1 point = 1 Ar</strong>
-</p>
+<select id="withdrawMethod">
+<option value="Orange">Orange Money</option>
+<option value="Yas">Yas</option>
+</select>
 
-<hr>
+<input id="withdrawPhone"
+type="tel"
+placeholder="Numéro Orange / Yas">
 
-<h3>💸 Demande de retrait</h3>
-
-<input id="phone" placeholder="Numéro Orange / Yas">
-
-<input
- id="amount"
- type="number"
- min="5000"
- placeholder="Montant en Ariary">
+<input id="withdrawAmount"
+type="number"
+placeholder="Montant en Ariary">
 
 <button onclick="withdraw()">
-💸 Demander le retrait
+💸 Demander un retrait
 </button>
 
-<p id="withdrawMsg"></p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🧾 Mes retraits</h3>
-
-<div id="myWithdrawals">
-Chargement...
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div id="missionPage" class="container hidden">
-
-<div class="card">
-
-<h2 id="mTitle"></h2>
-
-<p id="mDescription"></p>
-
-<p>
-🎁 Récompense :
-<b id="mReward"></b>
+<p style="font-size:12px;color:#777">
+Minimum : 5000 Ar
 </p>
 
-<textarea
- id="proof"
- placeholder="Écris ta preuve ici..."></textarea>
+</div>
 
-<button id="sendProofButton" onclick="sendProof()">
+<div class="card">
+
+<h3>📜 Mes retraits</h3>
+
+<div id="withdrawHistory">
+<div class="empty">Aucun retrait.</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MISSION PAGE -->
+<div id="missionPage" class="hidden">
+
+<div class="card">
+
+<h2>🎯 Mission</h2>
+
+<div id="missionDetails"></div>
+
+<textarea id="proofText"
+placeholder="Écris ici ta preuve / résultat de la mission..."></textarea>
+
+<button onclick="submitProof()">
 📤 Envoyer la preuve
 </button>
 
-<button class="gray" onclick="backApp()">
-Retour
+<button class="dark" onclick="backToMissions()">
+← Retour
 </button>
 
 </div>
 
 </div>
 
-
-<div id="adminPage" class="container hidden">
+<!-- ADMIN PAGE -->
+<div id="adminPage" class="hidden">
 
 <div class="card">
 
-<div class="adminHead">
+<h2>👨‍💼 ADMIN TASK MADA</h2>
 
-<h2>👨‍💼 ADMIN PANEL</h2>
-
-<p>Gestion de Task Mada</p>
-
+<div class="alert">
+<strong>Administrateur connecté</strong>
+<br>
+Chrispainrasolofo@gmail.com
 </div>
 
-<button class="red" onclick="adminLogout()">
-🚪 Déconnexion Admin
+<button class="dark" onclick="closeAdmin()">
+← Retour à l'application
 </button>
 
 </div>
 
-
 <div class="card">
 
-<h2>➕ Nouvelle mission</h2>
+<h3>➕ Créer une mission</h3>
 
-<input id="newTitle" placeholder="Titre">
+<input id="adminMissionTitle"
+placeholder="Titre de la mission">
 
-<textarea
- id="newDescription"
- placeholder="Description"></textarea>
+<textarea id="adminMissionDescription"
+placeholder="Description de la mission"></textarea>
 
-<input
- id="newReward"
- type="number"
- placeholder="Récompense en points">
+<input id="adminMissionReward"
+type="number"
+placeholder="Récompense en Ariary">
 
 <button onclick="createMission()">
-Créer la mission
+➕ Créer la mission
 </button>
 
 </div>
 
-
 <div class="card">
 
-<h2>🕐 Preuves à valider</h2>
+<h3>📤 Preuves en attente</h3>
 
 <div id="adminSubmissions">
-Chargement...
+<div class="empty">Chargement...</div>
 </div>
 
 </div>
-
 
 <div class="card">
 
-<h2>💸 Demandes de retrait</h2>
+<h3>💸 Retraits en attente</h3>
 
 <div id="adminWithdrawals">
-Chargement...
+<div class="empty">Chargement...</div>
 </div>
 
 </div>
-
 
 <div class="card">
 
-<h2>👥 Utilisateurs</h2>
+<h3>👥 Utilisateurs</h3>
 
 <div id="adminUsers">
-Chargement...
+<div class="empty">Chargement...</div>
 </div>
 
 </div>
 
 </div>
 
+<div class="footer">
+🇲🇬 Task Mada — Mission • Preuve • Récompense
+</div>
+
+</div>
 
 <script type="module">
 
 import {
- initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+initializeApp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
- getAuth,
- createUserWithEmailAndPassword,
- signInWithEmailAndPassword,
- signOut,
- onAuthStateChanged
-}
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+signOut,
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 import {
- getFirestore,
- collection,
- doc,
- addDoc,
- setDoc,
- getDoc,
- getDocs,
- query,
- where,
- updateDoc,
- increment,
- serverTimestamp
-}
-from
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+getFirestore,
+collection,
+doc,
+setDoc,
+getDoc,
+getDocs,
+addDoc,
+updateDoc,
+query,
+where,
+increment,
+serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
 const firebaseConfig={
-
- apiKey:"AIzaSyDiqwcSh__Q--puSDLNDczNh2cHYg-Aikw",
-
- authDomain:"task-mada-b706c.firebaseapp.com",
-
- projectId:"task-mada-b706c",
-
- storageBucket:"task-mada-b706c.firebasestorage.app",
-
- messagingSenderId:"1096483365245",
-
- appId:"1:1096483365245:web:99682974ebb6e9cc322c14",
-
- measurementId:"G-VJ9KX05F1G"
+apiKey:"AIzaSyDiqwcSh__Q--puSDLNDczNh2cHYg-Aikw",
+authDomain:"task-mada-b706c.firebaseapp.com",
+projectId:"task-mada-b706c",
+storageBucket:"task-mada-b706c.firebasestorage.app",
+messagingSenderId:"1096483365245",
+appId:"1:1096483365245:web:99682974ebb6e9cc322c14",
+measurementId:"G-VJ9KX05F1G"
 };
 
-
 const app=initializeApp(firebaseConfig);
-
 const auth=getAuth(app);
-
 const db=getFirestore(app);
 
 const ADMIN_EMAIL="Chrispainrasolofo@gmail.com";
 
 let currentUser=null;
-let selectedMission=null;
+let currentMission=null;
+
+let deferredPrompt=null;
 
 
-function $(id){
- return document.getElementById(id);
+window.addEventListener("beforeinstallprompt",e=>{
+e.preventDefault();
+deferredPrompt=e;
+document.getElementById("installBox")
+.classList.remove("hidden");
+});
+
+
+window.installApp=async function(){
+
+if(!deferredPrompt){
+alert("Installation non disponible ici.");
+return;
 }
 
+deferredPrompt.prompt();
 
-window.login=async function(){
+await deferredPrompt.userChoice;
 
- const email=$("loginEmail").value.trim();
- const pass=$("loginPass").value;
+deferredPrompt=null;
 
- if(!email||!pass){
-
-  $("loginMsg").textContent=
-  "⚠️ Remplis tous les champs.";
-
-  return;
- }
-
- try{
-
-  await signInWithEmailAndPassword(
-   auth,email,pass
-  );
-
-  $("loginMsg").textContent="";
-
- }catch(error){
-
-  $("loginMsg").textContent=
-  "❌ Connexion impossible.";
-
- }
-
-};
-
-
-window.register=async function(){
-
- const name=$("regName").value.trim();
- const email=$("regEmail").value.trim();
- const pass=$("regPass").value;
-
- if(!name||!email||!pass){
-
-  $("registerMsg").textContent=
-  "⚠️ Remplis tous les champs.";
-
-  return;
- }
-
- if(pass.length<6){
-
-  $("registerMsg").textContent=
-  "⚠️ Minimum 6 caractères.";
-
-  return;
- }
-
- try{
-
-  const result=
-  await createUserWithEmailAndPassword(
-   auth,email,pass
-  );
-
-  await setDoc(
-   doc(db,"users",result.user.uid),
-   {
-    name:name,
-    email:email,
-    points:0,
-    role:
-    email.toLowerCase()===
-    ADMIN_EMAIL.toLowerCase()
-    ?"admin":"user",
-    createdAt:serverTimestamp()
-   }
-  );
-
-  alert("✅ Compte créé.");
-
- }catch(error){
-
-  $("registerMsg").textContent=
-  "❌ "+error.message;
-
- }
-
-};
-
-
-onAuthStateChanged(
- auth,
- async user=>{
-
-  if(user){
-
-   currentUser=user;
-   await openApp();
-
-  }else{
-
-   currentUser=null;
-   showLogin();
-
-  }
-
- });
-
-
-async function getUserData(){
-
- if(!currentUser)return null;
-
- const snap=
- await getDoc(
-  doc(db,"users",currentUser.uid)
- );
-
- if(!snap.exists())return null;
-
- return{
-  id:snap.id,
-  ...snap.data()
- };
-
-}
-
-
-async function openApp(){
-
- $("loginPage").classList.add("hidden");
- $("registerPage").classList.add("hidden");
- $("appPage").classList.remove("hidden");
- $("missionPage").classList.add("hidden");
- $("adminPage").classList.add("hidden");
-
- const user=await getUserData();
-
- if(!user)return;
-
- $("userName").textContent=
- user.name||"Utilisateur";
-
- updateBalance(user);
-
- await renderAll();
-
-}
-
-
-function updateBalance(user){
-
- const points=Number(user.points||0);
-
- $("points").textContent=
- points.toLocaleString();
-
- $("money").textContent=
- points.toLocaleString();
-
- $("walletMoney").textContent=
- points.toLocaleString();
-
-}
-
-
-async function renderAll(){
-
- const user=await getUserData();
-
- if(user)updateBalance(user);
-
- await renderDashboard();
- await renderMissions();
- await renderHistory();
- await renderNotifications();
- await renderMyWithdrawals();
-
-}
-
-
-async function renderDashboard(){
-
- const user=await getUserData();
-
- if(!user)return;
-
- const q=query(
-  collection(db,"submissions"),
-  where("userId","==",currentUser.uid)
- );
-
- const snap=await getDocs(q);
-
- let approved=0;
- let pending=0;
-
- snap.forEach(d=>{
-
-  const s=d.data();
-
-  if(s.status==="approved")approved++;
-  if(s.status==="pending")pending++;
-
- });
-
- const missions=
- await getDocs(collection(db,"missions"));
-
- $("dashTotal").textContent=missions.size;
- $("dashApproved").textContent=approved;
- $("dashPending").textContent=pending;
- $("dashPoints").textContent=user.points||0;
-
-}
-
-
-async function renderMissions(){
-
- const box=$("missionsList");
-
- box.innerHTML="Chargement...";
-
- const missions=
- await getDocs(collection(db,"missions"));
-
- const subs=
- await getDocs(
-  query(
-   collection(db,"submissions"),
-   where("userId","==",currentUser.uid)
-  )
- );
-
- const map={};
-
- subs.forEach(d=>{
-
-  const s=d.data();
-
-  if(
-   !map[s.missionId]||
-   s.status==="approved"||
-   s.status==="pending"
-  ){
-
-   map[s.missionId]={
-    id:d.id,
-    ...s
-   };
-
-  }
-
- });
-
- box.innerHTML="";
-
- if(missions.empty){
-
-  box.innerHTML="<p>Aucune mission.</p>";
-  return;
-
- }
-
- missions.forEach(d=>{
-
-  const m={
-   id:d.id,
-   ...d.data()
-  };
-
-  const sub=map[m.id];
-
-  let status="";
-  let button="";
-
-  if(sub?.status==="approved"){
-
-   status=
-   '<span class="badge approved">✅ Validée</span>';
-
-  }else if(sub?.status==="pending"){
-
-   status=
-   '<span class="badge pending">🕐 En attente</span>';
-
-  }else if(sub?.status==="rejected"){
-
-   status=
-   '<span class="badge rejected">❌ Refusée</span>';
-
-   button=`
-   <button onclick="openMission('${m.id}')">
-   Renvoyer
-   </button>`;
-
-  }else{
-
-   button=`
-   <button onclick="openMission('${m.id}')">
-   Faire la mission
-   </button>`;
-
-  }
-
-  box.innerHTML+=`
-
-  <div class="mission">
-
-   <h3>${m.title}</h3>
-
-   <p>${m.description}</p>
-
-   <p>
-   🎁 <b>${m.reward} points</b>
-   </p>
-
-   ${status}
-   ${button}
-
-  </div>
-
-  `;
-
- });
-
-}
-
-
-window.openMission=async function(id){
-
- if(!currentUser)return;
-
- const q=query(
-  collection(db,"submissions"),
-  where("userId","==",currentUser.uid),
-  where("missionId","==",id)
- );
-
- const snap=await getDocs(q);
-
- let blocked=false;
-
- snap.forEach(d=>{
-
-  const s=d.data();
-
-  if(
-   s.status==="approved"||
-   s.status==="pending"
-  ){
-
-   blocked=true;
-
-  }
-
- });
-
- if(blocked){
-
-  await renderMissions();
-
-  alert(
-   "⚠️ Efa misy preuve nalefa na efa voamarina ity mission ity."
-  );
-
-  return;
- }
-
- const missionSnap=
- await getDoc(doc(db,"missions",id));
-
- if(!missionSnap.exists())return;
-
- const m=missionSnap.data();
-
- selectedMission=id;
-
- $("appPage").classList.add("hidden");
- $("missionPage").classList.remove("hidden");
-
- $("mTitle").textContent=m.title;
- $("mDescription").textContent=m.description;
- $("mReward").textContent=m.reward+" points";
- $("proof").value="";
-
-};
-
-
-window.sendProof=async function(){
-
- if(!currentUser){
-  alert("⚠️ Mila miditra aloha.");
-  return;
- }
-
- if(!selectedMission){
-  alert("⚠️ Mission tsy hita.");
-  return;
- }
-
- const proof=$("proof").value.trim();
-
- if(proof.length<5){
-  alert("⚠️ Preuve trop courte.");
-  return;
- }
-
- const button=$("sendProofButton");
-
- button.disabled=true;
- button.textContent="⏳ Envoi...";
-
- try{
-
-  const q=query(
-   collection(db,"submissions"),
-   where("userId","==",currentUser.uid),
-   where("missionId","==",selectedMission)
-  );
-
-  const snap=await getDocs(q);
-
-  let existing=null;
-
-  snap.forEach(d=>{
-
-   const s=d.data();
-
-   if(
-    s.status==="approved"||
-    s.status==="pending"||
-    s.status==="rejected"
-   ){
-
-    existing={
-     id:d.id,
-     ...s
-    };
-
-   }
-
-  });
-
-  if(existing?.status==="approved"){
-
-   alert("✅ Efa voamarina ity mission ity.");
-   return;
-
-  }
-
-  if(existing?.status==="pending"){
-
-   alert("🕐 Efa misy preuve miandry validation.");
-   return;
-
-  }
-
-  if(existing?.status==="rejected"){
-
-   await updateDoc(
-    doc(db,"submissions",existing.id),
-    {
-     proof:proof,
-     status:"pending",
-     reason:"",
-     updatedAt:serverTimestamp()
-    }
-   );
-
-   alert("📤 Preuve vaovao nalefa.");
-
-  }else{
-
-   await addDoc(
-    collection(db,"submissions"),
-    {
-     userId:currentUser.uid,
-     missionId:selectedMission,
-     proof:proof,
-     status:"pending",
-     createdAt:serverTimestamp()
-    }
-   );
-
-   alert("✅ Preuve envoyée.");
-
-  }
-
-  $("proof").value="";
-
-  await renderAll();
-
-  backApp();
-
- }catch(error){
-
-  console.error(error);
-
-  alert("❌ "+error.message);
-
- }finally{
-
-  button.disabled=false;
-  button.textContent="📤 Envoyer la preuve";
-
- }
-
-};
-
-
-async function renderHistory(){
-
- const box=$("historyList");
-
- const snap=
- await getDocs(
-  query(
-   collection(db,"submissions"),
-   where("userId","==",currentUser.uid)
-  )
- );
-
- box.innerHTML="";
-
- if(snap.empty){
-
-  box.innerHTML="<p>Aucun historique.</p>";
-  return;
-
- }
-
- for(const d of snap.docs){
-
-  const s=d.data();
-
-  let missionTitle="Mission";
-
-  try{
-
-   const missionSnap=
-   await getDoc(
-    doc(db,"missions",s.missionId)
-   );
-
-   if(missionSnap.exists()){
-    missionTitle=
-    missionSnap.data().title||"Mission";
-   }
-
-  }catch(e){}
-
-  let badge=
-  '<span class="badge pending">🕐 En attente</span>';
-
-  if(s.status==="approved"){
-   badge=
-   '<span class="badge approved">✅ Validée</span>';
-  }
-
-  if(s.status==="rejected"){
-   badge=
-   '<span class="badge rejected">❌ Refusée</span>';
-  }
-
-  box.innerHTML+=`
-
-  <div class="mission">
-
-   <h3>🎯 ${missionTitle}</h3>
-
-   <p>${badge}</p>
-
-   ${
-    s.reason
-    ?`<p>📝 Motif : ${s.reason}</p>`
-    :""
-   }
-
-  </div>
-
-  `;
-
- }
-
-}
-
-
-async function renderNotifications(){
-
- const box=$("notificationList");
-
- const snap=
- await getDocs(
-  query(
-   collection(db,"notifications"),
-   where("userId","==",currentUser.uid)
-  )
- );
-
- box.innerHTML="";
-
- if(snap.empty){
-
-  box.innerHTML="<p>🔕 Aucune notification.</p>";
-  return;
-
- }
-
- snap.forEach(d=>{
-
-  const n=d.data();
-
-  box.innerHTML+=`
-
-  <div class="mission">
-
-   <b>${n.text||"Notification"}</b>
-
-  </div>
-
-  `;
-
- });
-
-}
-
-
-window.withdraw=async function(){
-
- const phone=$("phone").value.trim();
- const amount=Number($("amount").value);
-
- if(!phone){
-
-  alert("⚠️ Numéro obligatoire.");
-  return;
-
- }
-
- if(amount<5000){
-
-  alert("⚠️ Minimum : 5 000 Ar.");
-  return;
-
- }
-
- const user=await getUserData();
- const balance=Number(user.points||0);
-
- if(amount>balance){
-
-  alert("❌ Solde insuffisant.");
-  return;
-
- }
-
- try{
-
-  await addDoc(
-   collection(db,"withdrawals"),
-   {
-    userId:currentUser.uid,
-    phone:phone,
-    amount:amount,
-    status:"pending",
-    createdAt:serverTimestamp()
-   }
-  );
-
-  $("withdrawMsg").textContent=
-  "🕐 Demande envoyée à l'Admin.";
-
-  $("phone").value="";
-  $("amount").value="";
-
-  await renderMyWithdrawals();
-
- }catch(error){
-
-  alert("❌ "+error.message);
-
- }
-
-};
-
-
-async function renderMyWithdrawals(){
-
- const box=$("myWithdrawals");
-
- if(!box)return;
-
- const snap=
- await getDocs(
-  query(
-   collection(db,"withdrawals"),
-   where("userId","==",currentUser.uid)
-  )
- );
-
- box.innerHTML="";
-
- if(snap.empty){
-
-  box.innerHTML="<p>Aucun retrait.</p>";
-  return;
-
- }
-
- snap.forEach(d=>{
-
-  const w=d.data();
-
-  let badge=
-  '<span class="badge pending">🕐 En attente</span>';
-
-  if(w.status==="paid"){
-
-   badge=
-   '<span class="badge paid">✅ Payé</span>';
-
-  }
-
-  box.innerHTML+=`
-
-  <div class="mission">
-
-   <p>
-   💰 <b>
-   ${Number(w.amount).toLocaleString()} Ar
-   </b>
-   </p>
-
-   <p>📱 ${w.phone}</p>
-
-   <p>${badge}</p>
-
-  </div>
-
-  `;
-
- });
-
-}
-
-
-window.showAdmin=async function(){
-
- if(!currentUser)return;
-
- if(
-  currentUser.email.toLowerCase()!==
-  ADMIN_EMAIL.toLowerCase()
- ){
-
-  alert("❌ Accès Admin refusé.");
-  return;
-
- }
-
- $("appPage").classList.add("hidden");
- $("adminPage").classList.remove("hidden");
-
- await renderAdmin();
-
-};
-
-
-const adminButton=
-document.createElement("button");
-
-adminButton.textContent="👨‍💼 Ouvrir Admin";
-adminButton.className="gray";
-adminButton.onclick=window.showAdmin;
-
-$("appPage").prepend(adminButton);
-
-
-async function renderAdmin(){
-
- await renderAdminSubmissions();
- await renderAdminWithdrawals();
- await renderAdminUsers();
-
-}
-
-
-async function renderAdminSubmissions(){
-
- const box=$("adminSubmissions");
-
- const snap=
- await getDocs(
-  query(
-   collection(db,"submissions"),
-   where("status","==","pending")
-  )
- );
-
- box.innerHTML="";
-
- if(snap.empty){
-
-  box.innerHTML="<p>✅ Aucune preuve.</p>";
-  return;
-
- }
-
- for(const d of snap.docs){
-
-  const s=d.data();
-
-  const userSnap=
-  await getDoc(doc(db,"users",s.userId));
-
-  const missionSnap=
-  await getDoc(doc(db,"missions",s.missionId));
-
-  const user=
-  userSnap.exists()?userSnap.data():{};
-
-  const mission=
-  missionSnap.exists()?missionSnap.data():{};
-
-  box.innerHTML+=`
-
-  <div class="mission">
-
-   <h3>${mission.title||"Mission"}</h3>
-
-   <p>👤 ${user.name||"Utilisateur"}</p>
-
-   <p>🎁 ${mission.reward||0} points</p>
-
-   <hr>
-
-   <p>
-   <b>Preuve :</b><br>
-   ${s.proof||""}
-   </p>
-
-   <button onclick="approveSubmission('${d.id}')">
-   ✅ Approuver
-   </button>
-
-   <button
-   class="red"
-   onclick="rejectSubmission('${d.id}')">
-   ❌ Refuser
-   </button>
-
-  </div>
-
-  `;
-
- }
-
-}
-
-
-window.approveSubmission=async function(id){
-
- try{
-
-  const subSnap=
-  await getDoc(doc(db,"submissions",id));
-
-  if(!subSnap.exists())return;
-
-  const s=subSnap.data();
-
-  if(s.status!=="pending"){
-
-   alert("⚠️ Cette preuve a déjà été traitée.");
-   await renderAdmin();
-   return;
-
-  }
-
-  const missionSnap=
-  await getDoc(doc(db,"missions",s.missionId));
-
-  if(!missionSnap.exists()){
-
-   alert("❌ Mission introuvable.");
-   return;
-
-  }
-
-  const mission=missionSnap.data();
-
-  await updateDoc(
-   doc(db,"submissions",id),
-   {
-    status:"approved",
-    approvedAt:serverTimestamp()
-   }
-  );
-
-  await updateDoc(
-   doc(db,"users",s.userId),
-   {
-    points:increment(Number(mission.reward||0))
-   }
-  );
-
-  await addDoc(
-   collection(db,"notifications"),
-   {
-    userId:s.userId,
-    text:
-    "🎉 Mission validée ! +"+
-    mission.reward+
-    " points.",
-    createdAt:serverTimestamp()
-   }
-  );
-
-  alert("✅ Mission approuvée.");
-
-  await renderAdmin();
-
- }catch(error){
-
-  alert("❌ "+error.message);
-
- }
-
-};
-
-
-window.rejectSubmission=async function(id){
-
- const reason=
- prompt("Pourquoi refuses-tu cette preuve ?");
-
- if(reason===null)return;
-
- try{
-
-  const snap=
-  await getDoc(doc(db,"submissions",id));
-
-  if(!snap.exists())return;
-
-  const s=snap.data();
-
-  if(s.status!=="pending"){
-
-   alert("⚠️ Cette preuve a déjà été traitée.");
-   await renderAdmin();
-   return;
-
-  }
-
-  const finalReason=
-  reason||"Preuve insuffisante";
-
-  await updateDoc(
-   doc(db,"submissions",id),
-   {
-    status:"rejected",
-    reason:finalReason,
-    rejectedAt:serverTimestamp()
-   }
-  );
-
-  await addDoc(
-   collection(db,"notifications"),
-   {
-    userId:s.userId,
-    text:
-    "❌ Preuve refusée : "+
-    finalReason,
-    createdAt:serverTimestamp()
-   }
-  );
-
-  alert("Preuve refusée.");
-
-  await renderAdmin();
-
- }catch(error){
-
-  alert("❌ "+error.message);
-
- }
-
-};
-
-
-window.createMission=async function(){
-
- const title=$("newTitle").value.trim();
-
- const description=
- $("newDescription").value.trim();
-
- const reward=
- Number($("newReward").value);
-
- if(!title||!description||!reward){
-
-  alert("⚠️ Remplis tous les champs.");
-  return;
-
- }
-
- try{
-
-  await addDoc(
-   collection(db,"missions"),
-   {
-    title:title,
-    description:description,
-    reward:reward,
-    createdAt:serverTimestamp()
-   }
-  );
-
-  $("newTitle").value="";
-  $("newDescription").value="";
-  $("newReward").value="";
-
-  alert("✅ Mission créée.");
-
-  await renderAdmin();
-
- }catch(error){
-
-  alert("❌ "+error.message);
-
- }
-
-};
-
-
-async function renderAdminWithdrawals(){
-
- const box=$("adminWithdrawals");
-
- const snap=
- await getDocs(
-  query(
-   collection(db,"withdrawals"),
-   where("status","==","pending")
-  )
- );
-
- box.innerHTML="";
-
- if(snap.empty){
-
-  box.innerHTML=
-  "<p>✅ Aucun retrait en attente.</p>";
-
-  return;
-
- }
-
- for(const d of snap.docs){
-
-  const w=d.data();
-
-  const userSnap=
-  await getDoc(doc(db,"users",w.userId));
-
-  const user=
-  userSnap.exists()?userSnap.data():{};
-
-  box.innerHTML+=`
-
-  <div class="mission">
-
-   <h3>
-   💸 ${Number(w.amount).toLocaleString()} Ar
-   </h3>
-
-   <p>
-   👤 <b>${user.name||"Utilisateur"}</b>
-   </p>
-
-   <p>📧 ${user.email||""}</p>
-
-   <p>📱 <b>${w.phone}</b></p>
-
-   <p>
-   <span class="badge pending">
-   🕐 En attente
-   </span>
-   </p>
-
-   <hr>
-
-   <p class="small">
-   Après avoir envoyé réellement l'argent,
-   appuie sur le bouton ci-dessous.
-   </p>
-
-   <button onclick="markWithdrawalPaid('${d.id}')">
-   ✅ Marquer comme payé
-   </button>
-
-  </div>
-
-  `;
-
- }
-
-}
-
-
-window.markWithdrawalPaid=async function(id){
-
- if(!confirm(
-  "Tu as déjà envoyé réellement l'argent ?"
- ))return;
-
- try{
-
-  const withdrawalSnap=
-  await getDoc(doc(db,"withdrawals",id));
-
-  if(!withdrawalSnap.exists())return;
-
-  const w=withdrawalSnap.data();
-
-  if(w.status!=="pending"){
-
-   alert("Ce retrait est déjà traité.");
-   return;
-
-  }
-
-  const userSnap=
-  await getDoc(doc(db,"users",w.userId));
-
-  if(!userSnap.exists()){
-
-   alert("Utilisateur introuvable.");
-   return;
-
-  }
-
-  const user=userSnap.data();
-
-  const points=Number(user.points||0);
-  const amount=Number(w.amount||0);
-
-  if(points<amount){
-
-   alert("❌ Solde utilisateur insuffisant.");
-   return;
-
-  }
-
-  await updateDoc(
-   doc(db,"users",w.userId),
-   {
-    points:increment(-amount)
-   }
-  );
-
-  await updateDoc(
-   doc(db,"withdrawals",id),
-   {
-    status:"paid",
-    paidAt:serverTimestamp()
-   }
-  );
-
-  await addDoc(
-   collection(db,"notifications"),
-   {
-    userId:w.userId,
-    text:
-    "✅ Retrait de "+
-    amount.toLocaleString()+
-    " Ar payé.",
-    createdAt:serverTimestamp()
-   }
-  );
-
-  alert("✅ Retrait marqué comme PAYÉ.");
-
-  await renderAdmin();
-
- }catch(error){
-
-  alert("❌ "+error.message);
-
- }
-
-};
-
-
-async function renderAdminUsers(){
-
- const box=$("adminUsers");
-
- const snap=
- await getDocs(collection(db,"users"));
-
- box.innerHTML="";
-
- snap.forEach(d=>{
-
-  const u=d.data();
-
-  box.innerHTML+=`
-
-  <div class="mission">
-
-   <b>👤 ${u.name||""}</b>
-
-   <p>📧 ${u.email||""}</p>
-
-   <p>
-   ⭐ ${Number(u.points||0).toLocaleString()}
-   points
-   </p>
-
-   <p>
-   💰 ${Number(u.points||0).toLocaleString()}
-   Ar
-   </p>
-
-  </div>
-
-  `;
-
- });
-
-}
-
-
-window.showSection=async function(id){
-
- document
- .querySelectorAll(".section")
- .forEach(
-  x=>x.classList.add("hidden")
- );
-
- $(id).classList.remove("hidden");
-
- if(id==="dashboard")
-  await renderDashboard();
-
- if(id==="missions")
-  await renderMissions();
-
- if(id==="history")
-  await renderHistory();
-
- if(id==="notifications")
-  await renderNotifications();
-
- if(id==="wallet"){
-
-  const user=await getUserData();
-
-  if(user)updateBalance(user);
-
-  await renderMyWithdrawals();
-
- }
-
-};
-
-
-window.backApp=function(){
-
- $("missionPage").classList.add("hidden");
- $("appPage").classList.remove("hidden");
-
-};
-
-
-window.logout=async function(){
-
- await signOut(auth);
-
-};
-
-
-window.adminLogout=function(){
-
- $("adminPage").classList.add("hidden");
- $("appPage").classList.remove("hidden");
-
-};
-
-
-window.showLogin=function(){
-
- $("loginPage").classList.remove("hidden");
- $("registerPage").classList.add("hidden");
- $("appPage").classList.add("hidden");
- $("missionPage").classList.add("hidden");
- $("adminPage").classList.add("hidden");
+document.getElementById("installBox")
+.classList.add("hidden");
 
 };
 
 
 window.showRegister=function(){
 
- $("loginPage").classList.add("hidden");
- $("registerPage").classList.remove("hidden");
+document.getElementById("loginPage")
+.classList.add("hidden");
+
+document.getElementById("registerPage")
+.classList.remove("hidden");
 
 };
 
 
-/* ================================
-   PWA INSTALL
-================================ */
+window.showLogin=function(){
 
-let deferredPrompt=null;
+document.getElementById("registerPage")
+.classList.add("hidden");
 
-window.addEventListener("beforeinstallprompt",event=>{
+document.getElementById("loginPage")
+.classList.remove("hidden");
 
- event.preventDefault();
+};
 
- deferredPrompt=event;
 
- $("installButton").style.display="block";
+window.register=async function(){
+
+const name=document.getElementById("registerName").value.trim();
+const email=document.getElementById("registerEmail").value.trim();
+const password=document.getElementById("registerPassword").value;
+
+if(!name||!email||!password){
+alert("Fenoy daholo ny champ.");
+return;
+}
+
+if(password.length<6){
+alert("Mot de passe : 6 caractères minimum.");
+return;
+}
+
+try{
+
+const cred=
+await createUserWithEmailAndPassword(
+auth,email,password
+);
+
+await setDoc(
+doc(db,"users",cred.user.uid),
+{
+name:name,
+email:email,
+points:0,
+role:email.toLowerCase()===ADMIN_EMAIL.toLowerCase()
+?"admin":"user",
+createdAt:serverTimestamp()
+}
+);
+
+alert("Compte créé avec succès 🇲🇬");
+
+}catch(error){
+
+alert("Erreur : "+error.message);
+
+}
+
+};
+
+
+window.login=async function(){
+
+const email=
+document.getElementById("loginEmail").value.trim();
+
+const password=
+document.getElementById("loginPassword").value;
+
+if(!email||!password){
+alert("Ampidiro email sy mot de passe.");
+return;
+}
+
+try{
+
+await signInWithEmailAndPassword(
+auth,email,password
+);
+
+}catch(error){
+
+alert("Connexion impossible : "+error.message);
+
+}
+
+};
+
+
+window.logout=async function(){
+
+await signOut(auth);
+
+};
+
+
+onAuthStateChanged(auth,async user=>{
+
+if(!user){
+
+currentUser=null;
+
+document.getElementById("appPage")
+.classList.add("hidden");
+
+document.getElementById("adminPage")
+.classList.add("hidden");
+
+document.getElementById("loginPage")
+.classList.remove("hidden");
+
+return;
+
+}
+
+currentUser=user;
+
+document.getElementById("loginPage")
+.classList.add("hidden");
+
+document.getElementById("registerPage")
+.classList.add("hidden");
+
+document.getElementById("appPage")
+.classList.remove("hidden");
+
+
+try{
+
+const userRef=doc(db,"users",user.uid);
+const snap=await getDoc(userRef);
+
+if(snap.exists()){
+
+const data=snap.data();
+
+const name=data.name||"Utilisateur";
+const points=Number(data.points||0);
+
+document.getElementById("userName")
+.textContent=name;
+
+document.getElementById("userEmail")
+.textContent=user.email;
+
+document.getElementById("points")
+.textContent=points;
+
+document.getElementById("money")
+.textContent=points;
+
+document.getElementById("walletMoney")
+.textContent=points;
+
+document.getElementById("avatar")
+.textContent=name.charAt(0).toUpperCase();
+
+}
+
+}catch(error){
+
+console.error(error);
+
+}
+
+
+/* ADMIN CHECK */
+
+if(
+user.email &&
+user.email.toLowerCase()===
+ADMIN_EMAIL.toLowerCase()
+){
+
+document.getElementById("adminAccess")
+.classList.remove("hidden");
+
+}else{
+
+document.getElementById("adminAccess")
+.classList.add("hidden");
+
+}
+
+
+loadMissions();
+loadHistory();
+loadNotifications();
+loadWithdrawals();
 
 });
 
 
-$("installButton").addEventListener("click",async()=>{
+window.openAdmin=function(){
 
- if(!deferredPrompt)return;
+if(!currentUser) return;
 
- deferredPrompt.prompt();
+if(
+currentUser.email.toLowerCase()!==
+ADMIN_EMAIL.toLowerCase()
+){
 
- await deferredPrompt.userChoice;
+alert("Accès Admin refusé.");
+return;
 
- deferredPrompt=null;
+}
 
- $("installButton").style.display="none";
+document.getElementById("appPage")
+.classList.add("hidden");
+
+document.getElementById("adminPage")
+.classList.remove("hidden");
+
+loadAdmin();
+
+};
+
+
+window.closeAdmin=function(){
+
+document.getElementById("adminPage")
+.classList.add("hidden");
+
+document.getElementById("appPage")
+.classList.remove("hidden");
+
+};
+
+
+window.showSection=function(id,button){
+
+document
+.querySelectorAll(".section")
+.forEach(s=>s.classList.add("hidden"));
+
+document
+.getElementById(id)
+.classList.remove("hidden");
+
+document
+.querySelectorAll(".nav button")
+.forEach(b=>b.classList.remove("active"));
+
+if(button)button.classList.add("active");
+
+if(id==="missions")loadMissions();
+if(id==="history")loadHistory();
+if(id==="notifications")loadNotifications();
+if(id==="wallet")loadWithdrawals();
+
+};
+
+
+function escapeHTML(text){
+
+return String(text||"")
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+
+}
+
+
+async function loadMissions(){
+
+const box=document.getElementById("missionList");
+
+box.innerHTML=
+`<div class="empty">Chargement...</div>`;
+
+try{
+
+const snap=
+await getDocs(collection(db,"missions"));
+
+if(snap.empty){
+
+box.innerHTML=
+`<div class="empty">
+Aucune mission disponible.
+</div>`;
+
+document.getElementById("missionCount")
+.textContent="0";
+
+return;
+
+}
+
+box.innerHTML="";
+
+let count=0;
+
+snap.forEach(item=>{
+
+count++;
+
+const m=item.data();
+
+const div=document.createElement("div");
+
+div.className="mission";
+
+div.innerHTML=`
+
+<div class="mission-head">
+
+<div>
+<h3>${escapeHTML(m.title)}</h3>
+<p>${escapeHTML(m.description)}</p>
+</div>
+
+<div class="reward">
++${m.reward||0} Ar
+</div>
+
+</div>
+
+<span class="badge">
+Mission disponible
+</span>
+
+<button>
+🎯 Faire la mission
+</button>
+
+`;
+
+div.querySelector("button")
+.onclick=()=>{
+openMission(item.id,m);
+};
+
+box.appendChild(div);
 
 });
 
+document.getElementById("missionCount")
+.textContent=count;
 
-window.addEventListener("appinstalled",()=>{
+}catch(error){
 
- $("installButton").style.display="none";
+console.error(error);
+
+box.innerHTML=
+`<div class="empty">Erreur de chargement.</div>`;
+
+}
+
+}
+
+
+window.openMission=function(id,mission){
+
+currentMission={
+id:id,
+...mission
+};
+
+document.getElementById("appPage")
+.classList.add("hidden");
+
+document.getElementById("missionPage")
+.classList.remove("hidden");
+
+document.getElementById("missionDetails")
+.innerHTML=`
+
+<div class="alert">
+
+<strong>${escapeHTML(mission.title)}</strong>
+
+<br><br>
+
+${escapeHTML(mission.description)}
+
+<br><br>
+
+🎁 Récompense :
+<strong>${mission.reward||0} Ar</strong>
+
+</div>
+
+`;
+
+};
+
+
+window.backToMissions=function(){
+
+document.getElementById("missionPage")
+.classList.add("hidden");
+
+document.getElementById("appPage")
+.classList.remove("hidden");
+
+};
+
+
+window.submitProof=async function(){
+
+if(!currentUser||!currentMission)return;
+
+const proof=
+document.getElementById("proofText")
+.value.trim();
+
+if(!proof){
+
+alert("Ampidiro aloha ny preuve.");
+return;
+
+}
+
+try{
+
+await addDoc(
+collection(db,"submissions"),
+{
+userId:currentUser.uid,
+missionId:currentMission.id,
+proof:proof,
+status:"pending",
+createdAt:serverTimestamp()
+}
+);
+
+await addDoc(
+collection(db,"notifications"),
+{
+userId:currentUser.uid,
+message:"Ny preuve-nao dia nalefa ary miandry validation.",
+createdAt:serverTimestamp()
+}
+);
+
+alert("Preuve envoyée 🇲🇬");
+
+document.getElementById("proofText").value="";
+
+backToMissions();
+
+}catch(error){
+
+alert("Erreur : "+error.message);
+
+}
+
+};
+
+
+async function loadHistory(){
+
+if(!currentUser)return;
+
+const box=document.getElementById("historyList");
+
+try{
+
+const q=query(
+collection(db,"submissions"),
+where("userId","==",currentUser.uid)
+);
+
+const snap=await getDocs(q);
+
+if(snap.empty){
+
+box.innerHTML=
+`<div class="empty">
+Tsy mbola misy historique.
+</div>`;
+
+return;
+
+}
+
+box.innerHTML="";
+
+snap.forEach(item=>{
+
+const s=item.data();
+
+let cls="pending";
+
+if(s.status==="approved")cls="paid";
+if(s.status==="rejected")cls="rejected";
+
+const div=document.createElement("div");
+
+div.className="item";
+
+div.innerHTML=`
+
+<strong>🎯 Mission</strong>
+
+<br>
+
+<span class="badge ${cls}">
+${escapeHTML(s.status||"pending")}
+</span>
+
+${s.reason?
+`<p>${escapeHTML(s.reason)}</p>`:""}
+
+`;
+
+box.appendChild(div);
 
 });
 
+}catch(error){
 
-/* ================================
-   SERVICE WORKER
-================================ */
+console.error(error);
 
-if("serviceWorker" in navigator){
+}
 
- window.addEventListener("load",()=>{
+}
 
-  navigator.serviceWorker
-   .register("./sw.js")
-   .then(()=>{
-    console.log("Task Mada PWA activé.");
-   })
-   .catch(error=>{
-    console.log("Service Worker:",error);
-   });
 
- });
+async function loadNotifications(){
+
+if(!currentUser)return;
+
+const box=document.getElementById("notificationList");
+
+try{
+
+const q=query(
+collection(db,"notifications"),
+where("userId","==",currentUser.uid)
+);
+
+const snap=await getDocs(q);
+
+if(snap.empty){
+
+box.innerHTML=
+`<div class="empty">
+Tsy mbola misy notification.
+</div>`;
+
+return;
+
+}
+
+box.innerHTML="";
+
+snap.forEach(item=>{
+
+const n=item.data();
+
+const div=document.createElement("div");
+
+div.className="item";
+
+div.innerHTML=
+`🔔 ${escapeHTML(n.message)}`;
+
+box.appendChild(div);
+
+});
+
+}catch(error){
+
+console.error(error);
+
+}
+
+}
+
+
+window.withdraw=async function(){
+
+if(!currentUser)return;
+
+const method=
+document.getElementById("withdrawMethod").value;
+
+const phone=
+document.getElementById("withdrawPhone")
+.value.trim();
+
+const amount=
+Number(
+document.getElementById("withdrawAmount").value
+);
+
+if(!phone||!amount){
+
+alert("Fenoy daholo ny information.");
+return;
+
+}
+
+if(amount<5000){
+
+alert("Minimum 5000 Ar.");
+return;
+
+}
+
+const userRef=doc(db,"users",currentUser.uid);
+
+const snap=await getDoc(userRef);
+
+if(!snap.exists())return;
+
+const balance=
+Number(snap.data().points||0);
+
+if(amount>balance){
+
+alert("Tsy ampy ny solde.");
+return;
+
+}
+
+try{
+
+await addDoc(
+collection(db,"withdrawals"),
+{
+userId:currentUser.uid,
+phone:phone,
+method:method,
+amount:amount,
+status:"pending",
+createdAt:serverTimestamp()
+}
+);
+
+await addDoc(
+collection(db,"notifications"),
+{
+userId:currentUser.uid,
+message:"Demande de retrait voaray.",
+createdAt:serverTimestamp()
+}
+);
+
+alert("Demande de retrait envoyée.");
+
+document.getElementById("withdrawPhone").value="";
+document.getElementById("withdrawAmount").value="";
+
+loadWithdrawals();
+
+}catch(error){
+
+alert("Erreur : "+error.message);
+
+}
+
+};
+
+
+async function loadWithdrawals(){
+
+if(!currentUser)return;
+
+const box=
+document.getElementById("withdrawHistory");
+
+try{
+
+const q=query(
+collection(db,"withdrawals"),
+where("userId","==",currentUser.uid)
+);
+
+const snap=await getDocs(q);
+
+if(snap.empty){
+
+box.innerHTML=
+`<div class="empty">Aucun retrait.</div>`;
+
+return;
+
+}
+
+box.innerHTML="";
+
+snap.forEach(item=>{
+
+const w=item.data();
+
+let cls="pending";
+
+if(w.status==="paid")cls="paid";
+if(w.status==="rejected")cls="rejected";
+
+const div=document.createElement("div");
+
+div.className="item";
+
+div.innerHTML=`
+
+<strong>💸 ${w.amount||0} Ar</strong>
+
+<br>
+
+${escapeHTML(w.method||"")}
+ — ${escapeHTML(w.phone||"")}
+
+<br>
+
+<span class="badge ${cls}">
+${escapeHTML(w.status||"pending")}
+</span>
+
+`;
+
+box.appendChild(div);
+
+});
+
+}catch(error){
+
+console.error(error);
+
+}
+
+}
+
+
+/* ================= ADMIN ================= */
+
+async function loadAdmin(){
+
+if(
+!currentUser ||
+currentUser.email.toLowerCase()!==
+ADMIN_EMAIL.toLowerCase()
+)return;
+
+loadAdminSubmissions();
+loadAdminWithdrawals();
+loadAdminUsers();
+
+}
+
+
+window.createMission=async function(){
+
+const title=
+document.getElementById("adminMissionTitle")
+.value.trim();
+
+const description=
+document.getElementById("adminMissionDescription")
+.value.trim();
+
+const reward=
+Number(
+document.getElementById("adminMissionReward").value
+);
+
+if(!title||!description||!reward){
+
+alert("Fenoy ny mission.");
+return;
+
+}
+
+try{
+
+await addDoc(
+collection(db,"missions"),
+{
+title:title,
+description:description,
+reward:reward,
+createdAt:serverTimestamp()
+}
+);
+
+alert("Mission créée 🇲🇬");
+
+document.getElementById("adminMissionTitle").value="";
+document.getElementById("adminMissionDescription").value="";
+document.getElementById("adminMissionReward").value="";
+
+}catch(error){
+
+alert("Erreur : "+error.message);
+
+}
+
+};
+
+
+async function loadAdminSubmissions(){
+
+const box=
+document.getElementById("adminSubmissions");
+
+try{
+
+const q=query(
+collection(db,"submissions"),
+where("status","==","pending")
+);
+
+const snap=await getDocs(q);
+
+if(snap.empty){
+
+box.innerHTML=
+`<div class="empty">
+Tsy misy preuve miandry.
+</div>`;
+
+return;
+
+}
+
+box.innerHTML="";
+
+snap.forEach(item=>{
+
+const s=item.data();
+
+const div=document.createElement("div");
+
+div.className="admin-card";
+
+div.innerHTML=`
+
+<strong>👤 User</strong>
+
+<p>
+${escapeHTML(s.proof)}
+</p>
+
+<button>✅ Approuver</button>
+
+<button class="red">❌ Rejeter</button>
+
+`;
+
+div.children[2].onclick=
+()=>approveSubmission(item.id,s);
+
+div.children[3].onclick=
+()=>rejectSubmission(item.id);
+
+box.appendChild(div);
+
+});
+
+}catch(error){
+
+console.error(error);
+
+}
+
+}
+
+
+async function approveSubmission(id,data){
+
+try{
+
+const missionSnap=
+await getDoc(
+doc(db,"missions",data.missionId)
+);
+
+if(!missionSnap.exists()){
+
+alert("Mission introuvable.");
+return;
+
+}
+
+const mission=missionSnap.data();
+
+await updateDoc(
+doc(db,"submissions",id),
+{
+status:"approved",
+approvedAt:serverTimestamp()
+}
+);
+
+await updateDoc(
+doc(db,"users",data.userId),
+{
+points:increment(
+Number(mission.reward||0)
+)
+}
+);
+
+await addDoc(
+collection(db,"notifications"),
+{
+userId:data.userId,
+message:"🎉 Mission approuvée ! Récompense ajoutée.",
+createdAt:serverTimestamp()
+}
+);
+
+alert("Mission approuvée.");
+
+loadAdminSubmissions();
+
+}catch(error){
+
+alert("Erreur : "+error.message);
+
+}
+
+}
+
+
+async function rejectSubmission(id){
+
+const reason=prompt(
+"Pourquoi rejeter cette preuve ?"
+);
+
+if(reason===null)return;
+
+try{
+
+const snap=
+await getDoc(
+doc(db,"submissions",id)
+);
+
+if(!snap.exists())return;
+
+const data=snap.data();
+
+await updateDoc(
+doc(db,"submissions",id),
+{
+status:"rejected",
+reason:reason
+}
+);
+
+await addDoc(
+collection(db,"notifications"),
+{
+userId:data.userId,
+message:"❌ Preuve rejetée : "+reason,
+createdAt:serverTimestamp()
+}
+);
+
+alert("Preuve rejetée.");
+
+loadAdminSubmissions();
+
+}catch(error){
+
+alert("Erreur : "+error.message);
+
+}
+
+}
+
+
+async function loadAdminWithdrawals(){
+
+const box=
+document.getElementById("adminWithdrawals");
+
+try{
+
+const q=query(
+collection(db,"withdrawals"),
+where("status","==","pending")
+);
+
+const snap=await getDocs(q);
+
+if(snap.empty){
+
+box.innerHTML=
+`<div class="empty">
+Tsy misy retrait miandry.
+</div>`;
+
+return;
+
+}
+
+box.innerHTML="";
+
+snap.forEach(item=>{
+
+const w=item.data();
+
+const div=document.createElement("div");
+
+div.className="admin-card";
+
+div.innerHTML=`
+
+<strong>💸 ${w.amount||0} Ar</strong>
+
+<p>
+${escapeHTML(w.method||"")}
+:
+${escapeHTML(w.phone||"")}
+</p>
+
+<button>
+✅ Marquer payé
+</button>
+
+`;
+
+div.querySelector("button")
+.onclick=()=>markWithdrawalPaid(item.id,w);
+
+box.appendChild(div);
+
+});
+
+}catch(error){
+
+console.error(error);
+
+}
+
+}
+
+
+async function markWithdrawalPaid(id,data){
+
+try{
+
+const userRef=
+doc(db,"users",data.userId);
+
+const snap=
+await getDoc(userRef);
+
+if(!snap.exists())return;
+
+const balance=
+Number(snap.data().points||0);
+
+const amount=
+Number(data.amount||0);
+
+if(amount>balance){
+
+alert("Solde insuffisant.");
+return;
+
+}
+
+await updateDoc(
+doc(db,"withdrawals",id),
+{
+status:"paid",
+paidAt:serverTimestamp()
+}
+);
+
+await updateDoc(
+userRef,
+{
+points:increment(-amount)
+}
+);
+
+await addDoc(
+collection(db,"notifications"),
+{
+userId:data.userId,
+message:"✅ Ton retrait a été payé.",
+createdAt:serverTimestamp()
+}
+);
+
+alert("Retrait marqué comme payé.");
+
+loadAdminWithdrawals();
+
+}catch(error){
+
+alert("Erreur : "+error.message);
+
+}
+
+}
+
+
+async function loadAdminUsers(){
+
+const box=
+document.getElementById("adminUsers");
+
+try{
+
+const snap=
+await getDocs(
+collection(db,"users")
+);
+
+if(snap.empty){
+
+box.innerHTML=
+`<div class="empty">Aucun utilisateur.</div>`;
+
+return;
+
+}
+
+box.innerHTML="";
+
+snap.forEach(item=>{
+
+const u=item.data();
+
+const div=document.createElement("div");
+
+div.className="admin-card";
+
+div.innerHTML=`
+
+👤 <strong>
+${escapeHTML(u.name||"Utilisateur")}
+</strong>
+
+<br>
+
+<small>
+${escapeHTML(u.email||"")}
+</small>
+
+<br>
+
+💰 ${u.points||0} Ar
+
+`;
+
+box.appendChild(div);
+
+});
+
+}catch(error){
+
+console.error(error);
+
+}
 
 }
 
