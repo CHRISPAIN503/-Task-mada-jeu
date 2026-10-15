@@ -34,15 +34,7 @@ box-shadow:0 3px 12px #0001
 input,select,textarea,button{
 width:100%;
 padding:13px;
-margin-top:9px;
-border-radius:10px;
-border:1px solid #ccd3dc;
-font-size:15px
-}
-textarea{min-height:100px}
-button{
-border:0;
-background:#087f5b;
+margin-top:9px;b;
 color:white;
 font-weight:bold
 }
@@ -2126,7 +2118,18 @@ return "";
 
 }
 
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js", {
+      scope: "./"
+    }).catch((error) => {
+      console.error("Erreur Service Worker :", error);
+    });
+  });
+}
 </script>
-
 </body>
 </html>
+  
+
